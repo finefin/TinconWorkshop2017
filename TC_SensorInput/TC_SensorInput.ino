@@ -7,8 +7,10 @@
 
 */
 
+
 // the Keyboard library gives you simple acces to keaboard output
 #include "Keyboard.h"
+#include "Mouse.h"
 
 // in this example you can have 2 inputs, i.e. buttons, sensors etc
 int signalPlayer1 = 8;
@@ -18,18 +20,20 @@ const char keyPlayer1 = 'q';    // key for player 1
 const char keyPlayer2 = 'p';    // key for player 2
 
 boolean analogInput = false;    // change this to true to read analog signals
-boolean pullupPinMode = false;  // change to true if you want to use pullup logic
+boolean pullupPinMode = true;  // change to true if you want to use pullup logic
 boolean inputActiveState;       // is HIGH or LOW (pullup) the active state?
 
 void setup() {
+  
   Serial.begin(9600);           // start serial communication
-  while (!Serial.available());  // wait for serial to activate
-
+  Serial.println ("Serial available!");
+  
     // using the internal pullup resistor is the
     // easiest way to build a button:
     // just connect a pin to GND to make it change
     // the state from HIGH to LOW (PULLUP means: logic is reverted!)
-    
+
+   
   if (pullupPinMode) {
     inputActiveState = LOW;
     pinMode (signalPlayer1, INPUT_PULLUP);
@@ -40,10 +44,11 @@ void setup() {
     pinMode (signalPlayer1, INPUT);
     pinMode (signalPlayer2, INPUT);
   }
+ 
   Keyboard.begin();             // start the keyboard
 
   if (analogInput) {
-    Mouse.begin();              // if you have an analog sensor input you could move the mouse
+    //Mouse.begin();              // if you have an analog sensor input you could move the mouse
   }
   
 }
@@ -65,22 +70,26 @@ void readDigitalInput () {
   int pin1 = digitalRead (signalPlayer1);
   int pin2 = digitalRead (signalPlayer2);
 
-  if (pin1 == HIGH) {
+  Serial.println (pin1);
+
+  if (pin1 == inputActiveState) {
     Keyboard.press(keyPlayer1);
   } else {
     Keyboard.release(keyPlayer1);
   }
 
-  if (pin2 == HIGH) {
+  if (pin2 == inputActiveState) {
     Keyboard.press(keyPlayer2);
   } else {
-    Keyboard.release(keyPlayer2);
+     Keyboard.release(keyPlayer2);
   }
 
 }
 
 
 void readAnalogInput() {  
+
+  // not tested
 
   int pin1 = digitalRead (signalPlayer1);
   int pin2 = digitalRead (signalPlayer2);
