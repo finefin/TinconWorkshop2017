@@ -4,7 +4,7 @@
 Ziel: Baue dein individuelles Eingabegerät<br>
 Material: Arduino mit 32U4-Chip, Arcade-Buttons, Jumper-Kabel
 
-Für dieses Projekt geeignet sind Arduinos mit 32U4-Chip - denn dieser meldet sich am PC als Tastatur an, wenn das Board per USB angeschlossen wird. Mit relativ wenigen Zeilen Code können Eingaben am Arduino (z.B. durch Sensoren) als Tastatur-Eingabe weitergereicht werden.
+Für dieses Projekt geeignet sind Arduinos mit 32U4-Chip - denn diese melden sich am PC als Tastatur an, wenn sie per USB angeschlossen werden. Mit relativ wenigen Zeilen Code können Eingaben am Arduino (z.B. durch Sensoren) als Tastatur-Eingabe weitergereicht werden.
 
 ## Hardware
 
