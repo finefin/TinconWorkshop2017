@@ -1,9 +1,13 @@
+
 /*
 
   Tincon/AMaze Alternative Controller Workshop 2017
   ~ Code example for sensor input with keyboard output ~
 
-  Run this on Arduino Leonardo/Pro Micro or any other board with 32U4 chip!
+  Run this on Arduino Leonardo/Pro Micro or any other Arduino-compatible with 32U4 chip!
+  
+
+  
 
 */
 
@@ -33,7 +37,6 @@ void setup() {
     // just connect a pin to GND to make it change
     // the state from HIGH to LOW (PULLUP means: logic is reverted!)
 
-   
   if (pullupPinMode) {
     inputActiveState = LOW;
     pinMode (signalPlayer1, INPUT_PULLUP);
@@ -48,7 +51,7 @@ void setup() {
   Keyboard.begin();             // start the keyboard
 
   if (analogInput) {
-    //Mouse.begin();              // if you have an analog sensor input you could move the mouse
+    //Mouse.begin();            // if you have an analog sensor input you could move the mouse
   }
   
 }
