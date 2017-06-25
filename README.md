@@ -1,7 +1,7 @@
 
 Tincon / A MAZE. Alternative Controller Workshop 2017
 
-Ziel: Baue dein individuelles Eingabegerät
+Ziel: Baue dein individuelles Eingabegerät<br>
 Material: Arduino mit 32U4-Chip, Arcade-Buttons, Jumper-Kabel
 
 Für dieses Projekt geeignet sind Arduinos mit 32U4-Chip - denn dieser meldet sich am PC als Tastatur an, wenn das Board per USB angeschlossen wird. Mit relativ wenigen Zeilen Code können Eingaben am Arduino (z.B. durch Sensoren) als Tastatur-Eingabe weitergereicht werden.
