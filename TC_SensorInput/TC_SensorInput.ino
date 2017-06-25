@@ -12,7 +12,7 @@
 */
 
 
-// the Keyboard library gives you simple acces to keaboard output
+// the Keyboard library gives you simple keyboard output via USB
 #include "Keyboard.h"
 #include "Mouse.h"
 
@@ -24,8 +24,9 @@ const char keyPlayer1 = 'q';    // key for player 1
 const char keyPlayer2 = 'p';    // key for player 2
 
 boolean analogInput = false;    // change this to true to read analog signals
-boolean pullupPinMode = true;  // change to true if you want to use pullup logic
-boolean inputActiveState;       // is HIGH or LOW (pullup) the active state?
+boolean pullupPinMode = true;   // change to true if you want to use pullup logic
+
+boolean inputActiveState;       // is HIGH or LOW (pullup) the active state? This is done automatically in setup()
 
 void setup() {
   
@@ -51,7 +52,7 @@ void setup() {
   Keyboard.begin();             // start the keyboard
 
   if (analogInput) {
-    //Mouse.begin();            // if you have an analog sensor input you could move the mouse
+    Mouse.begin();            // if you have an analog sensor input you could move the mouse
   }
   
 }
@@ -68,7 +69,7 @@ void loop() {
 
 void readDigitalInput () {
 
-  // read out the pins and press the key
+  // read out the pins and press the key if the pin is in 'active' state
 
   int pin1 = digitalRead (signalPlayer1);
   int pin2 = digitalRead (signalPlayer2);
@@ -92,13 +93,15 @@ void readDigitalInput () {
 
 void readAnalogInput() {  
 
-  // not tested
+  // not tested, but should work
+  // you'll probably have to play around with sensitivity of input
 
   int pin1 = digitalRead (signalPlayer1);
   int pin2 = digitalRead (signalPlayer2);
+  int sensitivity = 10;
 
-  pin1 = map (pin1, 0, 1023, -10,10);
-  pin2 = map (pin2, 0, 1023, -10,10);
+  pin1 = map (pin1, 0, 1023, sensitivity*-1,sensitivity);
+  pin2 = map (pin2, 0, 1023, sensitivity*-1,sensitivity);
 
   Mouse.move(pin1, pin2, 0);
 
