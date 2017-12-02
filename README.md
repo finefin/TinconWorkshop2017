@@ -22,7 +22,7 @@ Für einfache Buttons kann die Pullup-Schaltung verwendet werden
 
 Und so ein Accelerometer-Modul könnte eine Maus ersetzen
 ![Alt text](Schaltplan/Accelerometer.jpg?raw=true "Title")
-(Um dieses Modul zu nutzen, wird eine weitere Bibliothek benötigt. Sobald ich alles getestet habe, lade ich hier auch ein Beispiel dazu hoch. Hier gibt's schon mal die (englische) Arduino-Playground-Seite zu der Komponente: https://playground.arduino.cc/Main/MPU-6050 )
+Um dieses Modul zu nutzen, wird eine weitere Bibliothek benötigt. Hier ein (englisches) Tutorial zu der Komponente: https://playground.arduino.cc/Main/MPU-6050 )
 
 ## Software
 
