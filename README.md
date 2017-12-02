@@ -45,6 +45,6 @@ boolean analogInput = false;    // sollen analoge Signale verarbeitet werden: an
 boolean pullupPinMode = true;   // wurde eine Pullup-Button-Schaltung gebaut: pullupPinMode = true; 
 ```
 
-Was (bisher leider) <b>nicht</b> funktioniert:
-Sondertasten wie SHIFT oder CTRL sind sogenannte "Modifizierer" und können nicht als eigenständige Inputs an den PC gesendet werden. 
+Was leider <b>nicht</b> funktioniert:
+Sondertasten wie SHIFT oder CTRL sind sogenannte "Modifizierer" und können nicht als eigenständige Inputs an den PC gesendet werden :(
 
